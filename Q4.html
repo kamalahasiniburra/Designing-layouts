@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Grid Layout with Images</title>
+    <style>
+        /* General Reset and Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 1. Main Container: Box Model */
+        .logo-grid {
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* 2. Row Container: Flex Box for alignment and spacing */
+        .logo-row {
+            display: flex; /* Enable Flexbox */
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 25px; /* Spacing between rows (Box Model) */
+        }
+
+        /* Child Combinator: Distribute width evenly */
+        .logo-row > div {
+            flex-grow: 1;
+            flex-basis: 0;
+            margin: 0 10px; /* Horizontal spacing (Box Model) */
+        }
+
+        /* 3. Individual Logo Item: Box Model and Flexbox for centering */
+        .logo-item {
+            background-color: #f8f8ff;
+            border-radius: 10px;
+            height: 70px;
+            display: flex; /* Flexbox to center the image */
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s; /* CSS Selector/Style */
+        }
+
+        .logo-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Descendant Selector: Styling the Image */
+        .logo-item img {
+            max-width: 80%; /* Ensure the image fits within the item */
+            max-height: 80%;
+            height: auto;
+            width: auto;
+            object-fit: contain; /* Prevents stretching */
+        }
+
+        /* Attribute Selector Example: Target the red Jio logo item */
+        .logo-item[data-name="Jio"] {
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="logo-grid">
+        <div class="logo-row">
+            <div class="logo-item" data-name="Capegemini"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/capgemini_31a863e94f.svg" alt="Capgemini Logo"></div>
+            <div class="logo-item" data-name="Simplilearn"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/simplilearn_f8af8de923.svg" alt="Simplilearn Logo"></div>
+            <div class="logo-item" data-name="Pagartook"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/pagarbook_2746958f65.svg" alt="Pagartook Logo"></div>
+            <div class="logo-item" data-name="NOBBYTAP"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/moneytap_d5a6c9d532.svg" alt="NOBBYTAP Logo"></div>
+            <div class="logo-item" data-name="upGrad"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/bharatpe_a3a5a3f552.svg" alt="upGrad Logo"></div>
+            <div class="logo-item" data-name="Airmeet"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/airmeet_93e45faced.svg" alt="Airmeet Logo"></div>
+            <div class="logo-item" data-name="Paytm"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_a5c1ce2bc6.svg" alt="Paytm Logo"></div>
+            <div class="logo-item" data-name="Bhive"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/smallcase_1740bcc33f.svg" alt="Bhive Logo"></div>
+            <div class="logo-item" data-name="SaleBhai"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/urbanpiper_2884348a0b.svg" alt="SaleBhai Logo"></div>
+            <div class="logo-item" data-name="Vyapar"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/vyapar_3f3770ebb5.svg" alt="Vyapar Logo"></div>
+        </div>
+
+        <div class="logo-row">
+            <div class="logo-item" data-name="BharatAgri"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/bharatagri_d4794042fe.svg" alt="BharatAgri Logo"></div>
+            <div class="logo-item" data-name="Snapchat"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/sharechat_23a9923a34.svg" alt="Snapchat Logo"></div>
+            <div class="logo-item" data-name="Leapfro"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/leapfinance_0d785d05eb.svg" alt="Leapfro Logo"></div>
+            <div class="logo-item" data-name="OLA"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/ola_15b5ee2b82.svg" alt="OLA Logo"></div>
+            <div class="logo-item" data-name="IBM"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/ibm_795b5429ee.svg" alt="IBM Logo"></div>
+            <div class="logo-item" data-name="AJIO"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/ajio_a16cd7a85b.svg" alt="AJIO Logo"></div>
+            <div class="logo-item" data-name="KAPIWA"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/smallcase_1740bcc33f.svg" alt="KAPIWA Logo"></div>
+            <div class="logo-item" data-name="Globolic"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/globallogic_c30eb641f7.svg" alt="Globolic Logo"></div>
+            <div class="logo-item" data-name="EATFIT"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/eatfit_9dc276a187.svg" alt="EATFIT Logo"></div>
+            <div class="logo-item" data-name="wellcare"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/salesken_baefe048ac.svg" alt="wellcare Logo"></div>
+        </div>
+
+        <div class="logo-row">
+            <div class="logo-item" data-name="MarketLand"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/image_1600_789c48ace6.webp" alt="MarketLand Logo"></div>
+            <div class="logo-item" data-name="Swiggy"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/swiggy_bc1b88842e.svg" alt="Swiggy Logo"></div>
+            <div class="logo-item" data-name="INDEED"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/homelane_e9cadd0c3c.svg" alt="INDEED Logo"></div>
+            <div class="logo-item" data-name="Jio"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/My_Jio_For_Everything_Jio_5dd9635cab.webp" alt="Jio Logo"></div>
+            <div class="logo-item" data-name="PlayLabs"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/image_1_71234683bf.webp" alt="PlayLabs Logo"></div>
+            <div class="logo-item" data-name="HOGARTH"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Hogarth_Studios_Screen_RGB_Black_v2_120594e944.png" alt="HOGARTH Logo"></div>
+            <div class="logo-item" data-name="Cleartrip"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/image_1606_531a7683d1.webp" alt="Cleartrip Logo"></div>
+            <div class="logo-item" data-name="CueMath"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_22689_b09029d4ae.webp" alt="CueMath Logo"></div>
+            <div class="logo-item" data-name="FreshHome"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/image_1583_d3e798921d.webp" alt="FreshHome Logo"></div>
+            <div class="logo-item" data-name="Dream11"><img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/dream11_d6c8d97a52.svg" alt="Dream11 Logo"></div>
+        </div>
+    </div>
+
+</body>
+</html>
